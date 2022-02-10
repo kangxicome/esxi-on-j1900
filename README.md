@@ -12,35 +12,7 @@
   - 找一个速度还可以的，容量大于1G的优盘；
   - Rufus里选择VMware-VMvisor-Installer-201912001-15160138.x86_64.iso，和FAT32分区制作启动优盘；
   - 在我的电脑里，打开优盘，新建一个文本文件起名ks.cfg（记得在文件夹选项里取消隐藏扩展名）；
-  - ks.cfg的内容为（默认密码为 rootpw后面的内容，可以改成自己要的）
-
-```
-#
-# Sample scripted installation file
-#
-# Accept the VMware End User License Agreement
-vmaccepteula
-
-# Set the root password for the DCUI and Tech Support Mode
-rootpw myp@ssw0rd
-
-# Install on the first local disk available on machine
-install --firstdisk --overwritevmfs
-
-# Set the network to DHCP on the first network adapter
-network --bootproto=dhcp --device=vmnic0
-
-# A sample post-install script
-%post --interpreter=python --ignorefailure=true
-
-import time
-stampFile = open('/finished.stamp', mode='w')
-stampFile.write( time.asctime() )
-
-
-```
-
-
+  - ks.cfg文件中可修改默认密码，**rootpw** 为其他；
 
 ## Installation
 
@@ -49,8 +21,6 @@ stampFile.write( time.asctime() )
 3. 在命令行里输入 **ignoreHeadless=TRUE ks=file://etc/vmware/weasel/ks.cfg** 回车；
 4. 静等安装结束后，弹出一个黑色背景显示成功的消息框；
 5. 拔掉优盘，重启软路由机器；
-
-   
 
 ## Fix Headless Mode for ESXi boot
 
