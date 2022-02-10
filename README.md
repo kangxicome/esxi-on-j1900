@@ -12,7 +12,7 @@
   - 找一个速度还可以的，容量大于1G的优盘；
   - Rufus里选择VMware-VMvisor-Installer-201912001-15160138.x86_64.iso，和FAT32分区制作启动优盘；
   - 在我的电脑里，打开优盘，新建一个文本文件起名ks.cfg（记得在文件夹选项里取消隐藏扩展名）；
-  - ks.cfg文件中可修改默认密码，**rootpw** 为其他；
+  - ks.cfg文件中可修改默认密码**rootpw** 为其他；
 
 ## Installation
 
